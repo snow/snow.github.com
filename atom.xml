@@ -4,7 +4,7 @@
   <title><![CDATA[Meow and Grrr of a Stray Cat]]></title>
   <link href="http://snow.github.com/atom.xml" rel="self"/>
   <link href="http://snow.github.com/"/>
-  <updated>2012-05-15T23:02:40+08:00</updated>
+  <updated>2012-05-16T22:04:32+08:00</updated>
   <id>http://snow.github.com/</id>
   <author>
     <name><![CDATA[Snow Hellsing]]></name>
@@ -12,5 +12,24 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[None]]></title>
+    <link href="http://snow.github.com/blog/2010/10/13/654/"/>
+    <updated>2010-10-13T20:10:47+08:00</updated>
+    <id>http://snow.github.com/blog/2010/10/13/654</id>
+    <content type="html"><![CDATA[<p>年月日，泡小龙的铁观音。</p>
+
+<p>第一次冲热水大约20s之后要倒掉，我计为第0泡。</p>
+
+<p>然后我把第一泡茶给了小龙，这熊孩子正在Raid。</p>
+
+<p>10多分钟后，小龙问，这是第一泡？我正在忙，答，嗯。</p>
+
+<p>然后小龙就端起杯子把茶倒掉了。</p>
+
+<p>按一包铁观音可以泡10杯计，大概几十块钱就哗哗流走了～～</p>
+]]></content>
+  </entry>
   
 </feed>
