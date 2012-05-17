@@ -4,7 +4,7 @@
   <title><![CDATA[Meow and Grrr of a Stray Cat]]></title>
   <link href="http://snow.github.com/atom.xml" rel="self"/>
   <link href="http://snow.github.com/"/>
-  <updated>2012-05-17T22:40:39+08:00</updated>
+  <updated>2012-05-17T22:46:37+08:00</updated>
   <id>http://snow.github.com/</id>
   <author>
     <name><![CDATA[Snow Hellsing]]></name>
@@ -28,10 +28,10 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Push footer to page bottom by pure CSS]]></title>
-    <link href="http://snow.github.com/blog/2010/01/06/push-footer-to-page-bottom-by-pure-css/"/>
+    <title type="html"><![CDATA[Push page footer to window bottom by pure CSS]]></title>
+    <link href="http://snow.github.com/blog/2010/01/06/push-page-footer-to-window-bottom-by-pure-css/"/>
     <updated>2010-01-06T15:53:57+08:00</updated>
-    <id>http://snow.github.com/blog/2010/01/06/push-footer-to-page-bottom-by-pure-css</id>
+    <id>http://snow.github.com/blog/2010/01/06/push-page-footer-to-window-bottom-by-pure-css</id>
     <content type="html"><![CDATA[<p>First comes my html structure.</p>
 
 <pre><code>&lt;body&gt;
