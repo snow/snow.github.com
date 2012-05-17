@@ -5,17 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title> - Meow and Grrr of a Stray Cat</title>
+  <title>Push footer to page bottom by pure CSS - Meow and Grrr of a Stray Cat</title>
   <meta name="author" content="Snow Hellsing">
 
   
-  <meta name="description" content="年月日，泡小龙的铁观音。
-第一次冲热水大约20s之后要倒掉，我计为第0泡。
-然后我把第一泡茶给了小龙，这熊孩子正在Raid。
-10多分钟后，小龙问，这是第一泡？我正在忙，答，嗯。
-然后小龙就端起杯子把茶倒掉了。
-按一包铁观音可以泡10杯计，大概几十块钱就哗哗流走了～～
-">
+  <meta name="description" content="First comes my html structure. &lt;body&gt; &lt;div id="hd"&gt;&lt;/div&gt; &lt;div id="bd"&gt; &lt;div class="layout"&gt;&lt;/div&gt; &lt;/div&gt; & &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -24,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://snow.github.com/blog/2010/10/13/654">
+  <link rel="canonical" href="http://snow.github.com/blog/2010/01/06/push-footer-to-page-bottom-by-pure-css">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -73,7 +67,7 @@
   
   <header>
     
-      <h1 class="entry-title"></h1>
+      <h1 class="entry-title">Push Footer to Page Bottom by Pure CSS</h1>
     
     
       <p class="meta">
@@ -89,19 +83,43 @@
   
 
 
-<time datetime="2010-10-13T20:10:47+08:00" pubdate data-updated="true">Oct 13<span>th</span>, 2010</time>
+<time datetime="2010-01-06T15:53:57+08:00" pubdate data-updated="true">Jan 6<span>th</span>, 2010</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>年月日，泡小龙的铁观音。<br/>
-第一次冲热水大约20s之后要倒掉，我计为第0泡。<br/>
-然后我把第一泡茶给了小龙，这熊孩子正在Raid。<br/>
-10多分钟后，小龙问，这是第一泡？我正在忙，答，嗯。<br/>
-然后小龙就端起杯子把茶倒掉了。<br/>
-按一包铁观音可以泡10杯计，大概几十块钱就哗哗流走了～～</p>
+<div class="entry-content"><p>First comes my html structure.</p>
+
+<pre><code>&lt;body&gt;
+    &lt;div id="hd"&gt;&lt;/div&gt;
+    &lt;div id="bd"&gt;
+        &lt;div class="layout"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="ft"&gt;&lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+
+<p>Then css</p>
+
+<pre><code>html,body {
+    height:100%; /* required,or div#bd could not expand to full page height */
+}
+#hd {
+    height:50px;
+    margin-bottom:-50px; /* use negative margin-bottom of #hd instead of negative margin-top of #bd */
+}
+#bd {
+    min-height:100%; /* doesn't work under fucking IE6,write JS for it */
+}
+#bd .layout {
+    padding:50px 0 50px 0;/* 50px on top for header and 50px on bottom for footer */
+}
+#ft {
+    margin-top:-30px; /* I didn't use -50px curz I like to leave some while in the page bottom edge */
+}
+</code></pre>
 </div>
 
 
@@ -124,7 +142,7 @@
   
 
 
-<time datetime="2010-10-13T20:10:47+08:00" pubdate data-updated="true">Oct 13<span>th</span>, 2010</time>
+<time datetime="2010-01-06T15:53:57+08:00" pubdate data-updated="true">Jan 6<span>th</span>, 2010</time>
       
 
 
@@ -132,7 +150,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://snow.github.com/blog/2010/10/13/654/" data-via="" data-counturl="http://snow.github.com/blog/2010/10/13/654/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://snow.github.com/blog/2010/01/06/push-footer-to-page-bottom-by-pure-css/" data-via="" data-counturl="http://snow.github.com/blog/2010/01/06/push-footer-to-page-bottom-by-pure-css/" >Tweet</a>
   
   
   
@@ -141,8 +159,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2010/01/06/push-footer-to-page-bottom-by-pure-css/" title="Previous Post: Push footer to page bottom by pure CSS">&laquo; Push footer to page bottom by pure CSS</a>
       
+        <a class="basic-alignment right" href="/blog/2010/10/13/654/" title="Next Post: "> &raquo;</a>
       
     </p>
   </footer>
