@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: tech note | Meow and Grrr of a Stray Cat]]></title>
+  <link href="http://snow.github.com/blog/categories/tech-note/atom.xml" rel="self"/>
+  <link href="http://snow.github.com/"/>
+  <updated>2012-05-20T23:02:23+08:00</updated>
+  <id>http://snow.github.com/</id>
+  <author>
+    <name><![CDATA[Snow Hellsing]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Push page footer to window bottom by pure CSS]]></title>
+    <link href="http://snow.github.com/blog/2010/01/06/push-page-footer-to-window-bottom-by-pure-css/"/>
+    <updated>2010-01-06T15:53:57+08:00</updated>
+    <id>http://snow.github.com/blog/2010/01/06/push-page-footer-to-window-bottom-by-pure-css</id>
+    <content type="html"><![CDATA[<p>First comes my html structure.</p>
+
+<pre><code>&lt;body&gt;
+    &lt;div id="hd"&gt;&lt;/div&gt;
+    &lt;div id="bd"&gt;
+        &lt;div class="layout"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="ft"&gt;&lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+
+<p>Then css</p>
+
+<pre><code>html,body {
+    height:100%; /* required,or div#bd could not expand to full page height */
+}
+#hd {
+    height:50px;
+    margin-bottom:-50px; /* use negative margin-bottom of #hd instead of negative margin-top of #bd */
+}
+#bd {
+    min-height:100%; /* doesn't work under fucking IE6,write JS for it */
+}
+#bd .layout {
+    padding:50px 0 50px 0;/* 50px on top for header and 50px on bottom for footer */
+}
+#ft {
+    margin-top:-30px; /* I didn't use -50px curz I like to leave some while in the page bottom edge */
+}
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>
