@@ -1,0 +1,119 @@
+--- 
+# yaml block to trigger jekyll converter
+---
+@import "_vendor/sass-twitter-bootstrap/lib/bootstrap.scss";
+
+// var
+$mnav_width: 90px;
+
+// page
+body { background: $grayDark }
+.hp-pg {}
+
+// head
+.hp-site_head {
+  display:block; margin:20px 0 0 $mnav_width; 
+  color:$white; 
+  font-size:ceil($baseFontSize * 3);
+  line-height:ceil($baseLineHeight * 3);
+}
+a.hp-site_head { 
+  text-decoration:none;
+  
+  &:hover {
+    color:$white;
+  }
+}
+
+.hp-site_subhead {
+  margin:5px 0 20px $mnav_width; 
+  color:$grayLight; 
+  font-size:ceil($baseFontSize * 2);
+  line-height:ceil($baseLineHeight * 2);
+}
+
+// main nav
+.hp-mnav {
+  position:fixed; width:$mnav_width;
+  
+  .hp-li { 
+    display:block; padding:5px 10px; 
+    color:#ccc; text-decoration:none; text-align:right;
+    font-size:ceil($baseFontSize * 1.3); 
+    line-height:ceil($baseLineHeight * 1.3);
+    
+    &:hover, &.hp-on {
+      color:$grayDarker;
+      font-weight:bold;
+      
+      &:nth-child(1) { background:#429bb7 }
+      &:nth-child(2) { background:#c85c3f }
+      &:nth-child(3) { background:#84d8f2 }
+      &:nth-child(4) { background:#798871 }
+      &:nth-child(5) { background:#dcc6a8 }
+      &:nth-child(6) { background:#a1bc9d }
+      &:nth-child(7) { background:#d2b360 }
+    }    
+  }
+}
+
+// main area
+.hp-ma {
+  float:left; margin:0 0 0 $mnav_width; padding:20px; width:680px; 
+  background:$grayLighter; 
+  
+  h1 {
+    margin-bottom:25px;
+  }
+  
+  article {
+    margin:0 auto 50px; padding:15px;
+    background: $white;
+    
+    h1 {
+      margin:10px auto 20px;
+    }
+    
+    p {
+      font-size:ceil($baseFontSize * 1.05);
+      line-height:ceil($baseLineHeight * 1.4);
+    }
+  }
+}
+  
+// sidebar
+.hp-sb {
+  float:left; margin-left:10px; color:#ccc;
+  
+  section {
+    margin:0 auto 30px; width:200px;
+    
+    header {
+      margin-bottom:5px; color:#999;
+    }
+    
+    &.hp-tag_cloud {
+      a:hover {color:lighten($linkColor, 40%); text-decoration:none}
+      
+      .set-1 {font-size:14px}
+      .set-2 {font-size:16px}
+      .set-3 {font-size:18px}
+      .set-4 {font-size:20px}
+      .set-5 {font-size:22px}
+    }
+  }
+}
+
+// pagination
+.hp-pgn .hp-li {  
+  font-size:12px;
+  
+  &.hp-c, &.hp-p, &.hp-n {
+    font-size:18px;
+  }  
+}
+
+// page spec
+.hp-pg-index {
+  .hp-pg_head {display:none}
+}

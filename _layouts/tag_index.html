@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<div class="hp-pg-tag_index">
+  <h1 class="hp-pg_head">Tag: {{ page.tag }}</h1>
+  <div class="hp-stream">
+    {% for post in page.posts %}
+    <article>{{ post.content | summarize:post.url, site.baseurl }}</article>
+    {% endfor %}
+  </div>
+</div>

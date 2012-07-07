@@ -1,0 +1,6 @@
+_site/
+.project
+.rbenv-version
+.sass-cache
+s/c/app.css
+*.swp
