@@ -3864,7 +3864,7 @@ a.label:hover, a.badge:hover {
   visibility: hidden; }
 
 body {
-  background: #333333; }
+  background: #222; }
 
 .hp-site_head {
   display: block;
@@ -3934,7 +3934,8 @@ a.hp-site_head {
 .hp-sb {
   float: left;
   margin-left: 10px;
-  color: #ccc; }
+  color: #ccc;
+  font-weight: 200; }
   .hp-sb section {
     margin: 0 auto 30px;
     width: 200px; }
@@ -3954,6 +3955,9 @@ a.hp-site_head {
       font-size: 20px; }
     .hp-sb section.hp-tag_cloud .set-5 {
       font-size: 22px; }
+    .hp-sb section.hp-author h2 {
+      font-weight: 100;
+      font-size: 28px; }
 
 .hp-pgn .hp-li {
   font-size: 12px; }
