@@ -7,7 +7,7 @@
 $mnav_width: 90px;
 
 // page
-body { background: $grayDark }
+body { background:#222 }
 .hp-pg {}
 
 // head
@@ -83,7 +83,7 @@ a.hp-site_head {
   
 // sidebar
 .hp-sb {
-  float:left; margin-left:10px; color:#ccc;
+  float:left; margin-left:10px; color:#ccc; font-weight:200;
   
   section {
     margin:0 auto 30px; width:200px;
@@ -100,6 +100,12 @@ a.hp-site_head {
       .set-3 {font-size:18px}
       .set-4 {font-size:20px}
       .set-5 {font-size:22px}
+    }
+
+    &.hp-author {
+      h2 {
+        font-weight:100; font-size:28px;
+      }
     }
   }
 }
