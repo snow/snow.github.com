@@ -1,0 +1,18 @@
+---
+layout: default
+title: Meow and Grrr of a Stray Cat
+---
+<div class="hp-pg-archive">
+  <h1 class="hp-pg_head">Archive</h1>
+  {% for year in page.years_months_posts %}
+  <h2>{{ year[0] }}</h2>
+    {% for month in year[1] %}
+  <h3>{{ month[0] }}</h3>
+  <ul>
+      {% for post in month[1] %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+      {% endfor %}
+  </ul>
+    {% endfor %}
+  {% endfor %}
+</div>
