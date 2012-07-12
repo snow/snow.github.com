@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Meow and Grrr of a Stray Cat
+mnav: posts
 ---
 <div class="hp-pg-archive">
   <h1 class="hp-pg_head">Archive</h1>
@@ -10,8 +11,9 @@ title: Meow and Grrr of a Stray Cat
   <h3>{{ month[0] }}</h3>
   <ul>
       {% for post in month[1] %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+      <li><a class="hp-article" href="{{ site.baseurl }}{{ post.url }}">{{ post.content | summarize:post.url, site.baseurl }}</a></li>
       {% endfor %}
+      <div class="hp-c"></div>
   </ul>
     {% endfor %}
   {% endfor %}

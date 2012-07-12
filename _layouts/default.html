@@ -11,17 +11,20 @@
 </head>
 <body>
   <div class="hp-pgwr">
-    <a class="hp-site_head" href="/">Meow and Grrr of a Stray Cat</a>
-    <p class="hp-site_subhead">Life, opinions, tech notes, etc.</p>
+    <header>
+      <a class="hp-site_head" href="/">Meow and Grrr of a Stray Cat</a>
+      <p class="hp-site_subhead">Life, opinions, tech notes, etc.</p>
+    </header>
+    
     <nav class="hp-mnav">
-      <a class="hp-li hp-on" href="{{ site.baseurl }}/">posts</a>
-      <a class="hp-li" href="{{ site.baseurl }}/gallery/">gallery</a>
+      <a class="hp-li{% if 'posts' == page.mnav %} hp-on{% endif %}" href="{{ site.baseurl }}/">posts</a>
+      <a class="hp-li{% if 'gallery' == page.mnav %} hp-on{% endif %}" href="{{ site.baseurl }}/gallery/">gallery</a>
       <a class="hp-li" href="http://snow.github.com/resume" target="_blank">resume</a>
     </nav>
     
     <div class="hp-ma">
       {{ content }}
-      <div style="clear:both"></div>
+      <div class="hp-c"></div>
     </div>
     
     <div class="hp-sb">
@@ -36,8 +39,14 @@
         {{ site | tag_cloud:site.baseurl }}
       </section>
       
-      <div style="clear:both"></div>
+      <section class="hp-archive">
+        <header><a href="/archive.html">Archive</a></header>
+      </section>
+      
+      <div class="hp-c"></div>
     </div>
+    
+    <footer>Powered by <a href="http://jekyllrb.com/" target="_blank">jekyll</a>, hosting on <a href="http://pages.github.com/" target="_blank">github</a></footer>
   </div>
 </body>
 </html>
