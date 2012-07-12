@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: index
 title: Meow and Grrr of a Stray Cat
 mnav: posts
 ---
@@ -7,10 +7,10 @@ mnav: posts
   <h1 class="hp-pg_head">Posts</h1>
   <div class="hp-stream">
     {% for post in paginator.posts %}
-    <article>{{ post.content | summarize:post.url, site.baseurl }}</article>
+      {% include post/stream_item.html %}
     {% else %}
       {% for post in site.posts %}
-    <article>{{ post.content | summarize:post.url, site.baseurl }}</article>
+        {% include post/stream_item.html %}
       {% endfor %}
     {% endfor %}
   </div>

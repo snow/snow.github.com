@@ -1,11 +1,13 @@
 ---
-layout: default
+layout: index
+mnav: posts
 ---
 <div class="hp-pg-tag_index">
   <h1 class="hp-pg_head">Tag: {{ page.tag }}</h1>
-  <div class="hp-stream">
+  <div class="hp-block_stream">
     {% for post in page.posts %}
-    <article>{{ post.content | summarize:post.url, site.baseurl }}</article>
+      {% include post/block_stream_item.html %}
     {% endfor %}
+    <div class="hp-c"></div>
   </div>
 </div>

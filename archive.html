@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: index
 title: Meow and Grrr of a Stray Cat
 mnav: posts
 ---
@@ -9,12 +9,12 @@ mnav: posts
   <h2>{{ year[0] }}</h2>
     {% for month in year[1] %}
   <h3>{{ month[0] }}</h3>
-  <ul>
+  <div class="hp-block_stream">
       {% for post in month[1] %}
-      <li><a class="hp-article" href="{{ site.baseurl }}{{ post.url }}">{{ post.content | summarize:post.url, site.baseurl }}</a></li>
+        {% include post/block_stream_item.html %}
       {% endfor %}
-      <div class="hp-c"></div>
-  </ul>
+    <div class="hp-c"></div>
+  </div>
     {% endfor %}
   {% endfor %}
 </div>

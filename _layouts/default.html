@@ -22,28 +22,10 @@
       <a class="hp-li" href="http://snow.github.com/resume" target="_blank">resume</a>
     </nav>
     
-    <div class="hp-ma">
-      {{ content }}
-      <div class="hp-c"></div>
-    </div>
-    
-    <div class="hp-sb">
-      <section class="hp-author">
-        <header>The author</header>
-        <h2>Snow Hellsing</h2>
-        Just a stray cat
-      </section>
-      
-      <section class="hp-tag_cloud">
-        <header>Tags</header>
-        {{ site | tag_cloud:site.baseurl }}
-      </section>
-      
-      <section class="hp-archive">
-        <header><a href="/archive.html">Archive</a></header>
-      </section>
-      
-      <div class="hp-c"></div>
+    <div class="hp-pgbd">
+      <div class="hp-inr">{{ content }}
+        <div class="hp-c"></div>
+      </div>
     </div>
     
     <footer>Powered by <a href="http://jekyllrb.com/" target="_blank">jekyll</a>, hosting on <a href="http://pages.github.com/" target="_blank">github</a></footer>

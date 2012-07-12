@@ -1,0 +1,14 @@
+<article>
+  {{ post.content | summarize }}
+  <footer>
+    <a class="hp-fullpost" href="{{ site.base_url }}{{ post.url }}">full details &raquo;</a>
+    <div class="hp-meta">
+    {{ post.date }} <br />
+    tagged in:
+    {% for tag in post.tags %}
+      <a href="/tags/{{ tag }}.html">{{ tag }}</a>
+    {% endfor %}
+    </div>
+    <div class="hp-c"></div>
+  </footer>
+</article>

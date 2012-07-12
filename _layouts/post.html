@@ -1,6 +1,26 @@
 ---
 layout: default
+mnav: posts
 ---
-<div class="hp-pg-post">
-  <article>{{ content }}</article>
+<div class="hp-ma">
+  <div class="hp-pg-post">
+    <article>
+      {{ content }}
+      
+      <footer>posted at {{ page.date }}</footer>
+    </article>
+  </div>
 </div>
+
+<div class="hp-sb">
+  {% include sb/author.html %}
+  
+  <section class="hp-tags">
+    <header>Tagged in</header>
+    {% for tag in page.tags %}
+    <a href="/tags/{{ tag }}.html">{{ tag }}</a>
+    {% endfor %}
+  </section>
+</div>
+
+
