@@ -28,31 +28,91 @@
   <h1 class="hp-pg_head">Tag: tech</h1>
   <div class="hp-block_stream">
     
-      <a class="hp-block_si" href="/2010/01/06/push-page-footer-to-window-bottom-by-pure-css.html"><h1>Push Page Footer to Window Bottom by Pure CSS</h1>
+      <a class="hp-block_si" href="/2010/01/06/push-page-footer-to-window-bottom-by-pure-css.html"><h1 id="push-page-footer-to-window-bottom-by-pure-css">Push Page Footer to Window Bottom by Pure CSS</h1>
 
 <p>First comes my html structure.</p>
 
-<pre><code class="HTML">&lt;body&gt;
-  &lt;div id=&quot;hd&quot;&gt;&lt;/div&gt;
-  &lt;div id=&quot;bd&quot;&gt;
-    &lt;div class=&quot;layout&quot;&gt;&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div id=&quot;ft&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;
-</code></pre></a>
+<p>```HTML</p>
+<body>
+  <div id="hd"></div>
+  <div id="bd">
+    <div class="layout"></div>
+  </div>
+  <div id="ft"></div>
+</body>
+<p>```</p>
+
+<hr />
+<p>Then css</p>
+
+<p><code>CSS
+html,body {
+  /* required,or div#bd could not expand to full page height */
+  height:100%; 
+}
+#hd {
+  height:50px;
+  /* use negative margin-bottom of #hd instead of negative margin-top of #bd */
+  margin-bottom:-50px; 
+}
+#bd {
+  /* doesn't work under fucking IE6,write JS for it */
+  min-height:100%; 
+}
+#bd .layout {
+  /* 50px on top for header and 50px on bottom for footer */
+  padding:50px 0 50px 0;
+}
+#ft {
+  /* I didn't use -50px curz I like to leave some while in the page bottom edge */
+  margin-top:-30px; 
+}
+</code></p>
+</a>
     
-      <a class="hp-block_si" href="/2009/07/03/fast_debian_n_ubuntu_source_in_china.html"><h1>收集国内速度快的Debian或者Ubuntu源</h1>
+      <a class="hp-block_si" href="/2009/07/03/fast_debian_n_ubuntu_source_in_china.html"><h1 id="debianubuntu">收集国内速度快的Debian或者Ubuntu源</h1>
 
-<h2>Debian</h2>
+<h2 id="debian">Debian</h2>
 
-<p><strong>ftp://ftp.sjtu.edu.cn/debian</strong><br>
+<p><strong>ftp://ftp.sjtu.edu.cn/debian</strong><br />
 成都信息工程学院教育网内速度在上网高峰期约1MB/s左右,闲时可达5MB/s.</p>
 
-<p><strong>http://ftp.kr.debian.org/debian/</strong><br>
+<p><strong>http://ftp.kr.debian.org/debian/</strong><br />
 教育网内500KB/s左右,不太稳定</p>
 
-<p><strong>http://ftp.tw.debian.org/debian/</strong><br>
-教育网内200-500 KB/s，比韩国的稳定</p></a>
+<p><strong>http://ftp.tw.debian.org/debian/</strong><br />
+教育网内200-500 KB/s，比韩国的稳定
+- - -
+* http://ftp.hk.debian.org/debian/
+* http://ftp.jp.debian.org/debian/
+* http://ftp2.jp.debian.org/debian/
+还没测试过</p>
+
+<h2 id="ubuntu">Ubuntu</h2>
+
+<dl>
+  <dt>http://ubuntu.cn99.com/ubuntu/</dt>
+  <dd>成都电信,150KB/s到300KB/s，偶尔可达400KB/s以上</dd>
+  <dt>http://tw.archive.ubuntu.com/ubuntu/</dt>
+  <dd>成都电信稳定在300KB/s左右</dd>
+</dl>
+
+<h2 id="section">其他</h2>
+
+<ul>
+  <li>mirrors.shlug.org</li>
+  <li>mirrors.geekbone.org</li>
+  <li>cn.archive.ubuntu.com
+这三个地址都是Ubuntu中国官方镜像,同时为ubuntu和debian提供源。在成都电信只有几十到一百KB/s左右的速度。</li>
+</ul>
+
+<h2 id="cn99">CN99</h2>
+<ul>
+  <li>debian.cn99.com</li>
+  <li>ubuntu.cn99.com
+这是希网网络的镜像站，同时为debian和ubuntu提供源,还有和Redhat,centos,fedora,archlinux,gentoo,eclipse等有关的好东西，非常值得去翻一下的地方。</li>
+</ul>
+</a>
     
     <div class="hp-c"></div>
   </div>

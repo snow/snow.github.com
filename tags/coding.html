@@ -28,18 +28,47 @@
   <h1 class="hp-pg_head">Tag: coding</h1>
   <div class="hp-block_stream">
     
-      <a class="hp-block_si" href="/2010/01/06/push-page-footer-to-window-bottom-by-pure-css.html"><h1>Push Page Footer to Window Bottom by Pure CSS</h1>
+      <a class="hp-block_si" href="/2010/01/06/push-page-footer-to-window-bottom-by-pure-css.html"><h1 id="push-page-footer-to-window-bottom-by-pure-css">Push Page Footer to Window Bottom by Pure CSS</h1>
 
 <p>First comes my html structure.</p>
 
-<pre><code class="HTML">&lt;body&gt;
-  &lt;div id=&quot;hd&quot;&gt;&lt;/div&gt;
-  &lt;div id=&quot;bd&quot;&gt;
-    &lt;div class=&quot;layout&quot;&gt;&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div id=&quot;ft&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;
-</code></pre></a>
+<p>```HTML</p>
+<body>
+  <div id="hd"></div>
+  <div id="bd">
+    <div class="layout"></div>
+  </div>
+  <div id="ft"></div>
+</body>
+<p>```</p>
+
+<hr />
+<p>Then css</p>
+
+<p><code>CSS
+html,body {
+  /* required,or div#bd could not expand to full page height */
+  height:100%; 
+}
+#hd {
+  height:50px;
+  /* use negative margin-bottom of #hd instead of negative margin-top of #bd */
+  margin-bottom:-50px; 
+}
+#bd {
+  /* doesn't work under fucking IE6,write JS for it */
+  min-height:100%; 
+}
+#bd .layout {
+  /* 50px on top for header and 50px on bottom for footer */
+  padding:50px 0 50px 0;
+}
+#ft {
+  /* I didn't use -50px curz I like to leave some while in the page bottom edge */
+  margin-top:-30px; 
+}
+</code></p>
+</a>
     
     <div class="hp-c"></div>
   </div>

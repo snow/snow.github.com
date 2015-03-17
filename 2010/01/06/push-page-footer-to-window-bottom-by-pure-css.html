@@ -26,22 +26,25 @@
       <div class="hp-inr"><div class="hp-ma">
   <div class="hp-pg-post">
     <article>
-      <h1>Push Page Footer to Window Bottom by Pure CSS</h1>
+      <h1 id="push-page-footer-to-window-bottom-by-pure-css">Push Page Footer to Window Bottom by Pure CSS</h1>
 
 <p>First comes my html structure.</p>
 
-<pre><code class="HTML">&lt;body&gt;
-  &lt;div id=&quot;hd&quot;&gt;&lt;/div&gt;
-  &lt;div id=&quot;bd&quot;&gt;
-    &lt;div class=&quot;layout&quot;&gt;&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div id=&quot;ft&quot;&gt;&lt;/div&gt;
-&lt;/body&gt;
-</code></pre>
-<!-- more -->
+<p>```HTML</p>
+<body>
+  <div id="hd"></div>
+  <div id="bd">
+    <div class="layout"></div>
+  </div>
+  <div id="ft"></div>
+</body>
+<p>```</p>
+
+<hr />
 <p>Then css</p>
 
-<pre><code class="CSS">html,body {
+<p><code>CSS
+html,body {
   /* required,or div#bd could not expand to full page height */
   height:100%; 
 }
@@ -51,7 +54,7 @@
   margin-bottom:-50px; 
 }
 #bd {
-  /* doesn&#39;t work under fucking IE6,write JS for it */
+  /* doesn't work under fucking IE6,write JS for it */
   min-height:100%; 
 }
 #bd .layout {
@@ -59,10 +62,10 @@
   padding:50px 0 50px 0;
 }
 #ft {
-  /* I didn&#39;t use -50px curz I like to leave some while in the page bottom edge */
+  /* I didn't use -50px curz I like to leave some while in the page bottom edge */
   margin-top:-30px; 
 }
-</code></pre>
+</code></p>
 
       
       <footer>posted at 2010-01-06 15:53:57 +0800</footer>
