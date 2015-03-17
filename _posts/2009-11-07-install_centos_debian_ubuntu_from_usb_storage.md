@@ -37,7 +37,7 @@ installer-i386这一级上根据自己的平台选择，要和iso匹配，例如
 然后用这个U盘开机，通常是在开机自检的时候按f12或者esc会进入选择启动设备的菜单，在那里选择usb-hdd或者在硬盘列表里找到u盘。还不会的话自己google一下。  
 启动成功之后就到了grub菜单，按c进入命令行，执行
 
-```shell
+```sh
 kernel /vmlinuz
 initrd /initrd.gz #或者.img
 boot

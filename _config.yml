@@ -1,6 +1,12 @@
-highlighter: false
+markdown: CustomMarkdownProcessor
 paginate: 5
 tag_page_layout: tag_index
 tag_page_dir: tags
 sass:
   sass_dir: _vendor/sass-twitter-bootstrap/lib
+defaults:
+  -
+    scope: 
+      path: ""
+    values:
+      layout: "post"

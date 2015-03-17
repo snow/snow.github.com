@@ -1,15 +1,15 @@
 #require 'lib/redcarpet'
-require 'redcarpet.rb'
+require 'redcarpet'
+require 'pygments'
 require 'logger'
 
-class HTML_hypo < Redcarpet::Render::SmartyHTML
+class CustomRender < Redcarpet::Render::SmartyHTML
   
   def hrule
     '<!-- more -->'
   end
   
   def image(link, title='', alt_text='')
-    
     unless alt_text && alt_text.strip.length then
       alt_text = "image at #{link}"
     end
@@ -32,6 +32,10 @@ class HTML_hypo < Redcarpet::Render::SmartyHTML
       HTML
     end
     
+  end
+
+  def block_code(code, language)
+    Pygments.highlight(code, lexer: language)
   end
   
 end
