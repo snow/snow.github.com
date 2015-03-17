@@ -6,8 +6,8 @@ tags:
 - tech
 ---
 
-科学上网笔记
-=============
+科学上网笔记 *(还没写完)*
+=======================
 
 我们面对什么问题
 ----------------
@@ -72,13 +72,6 @@ forward-zone:
   forward-addr: 77.88.8.8
   forward-addr: 77.88.8.1
 ```
-
-``` ruby
-hsh = { a: 1, b: 2 }.tap { |h|
-  h[:c] = 3
-}
-```
-
 unload/load之后修改网络设置，设置127.0.0.1为唯一的dns服务器。
 
 ### 流量隧道
@@ -91,4 +84,7 @@ unload/load之后修改网络设置，设置127.0.0.1为唯一的dns服务器。
 Chrome + swtichy omega, 平时会上的国内网站不超过五个，白名单处理，默认走隧道。
 
 ### 命令行和其它应用
-proxychains (https://github.com/rofl0r/proxychains-ng) 在ssh上效果相当好
+proxychains (https://github.com/rofl0r/proxychains-ng) 在ssh上效果显著，原先按一个键要过几秒钟才出字的情况可以缓解到一秒左右就出字。 T_T
+
+
+*(还没写完...)*
