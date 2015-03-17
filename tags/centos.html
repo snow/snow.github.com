@@ -28,45 +28,15 @@
   <h1 class="hp-pg_head">Tag: centos</h1>
   <div class="hp-block_stream">
     
-      <a class="hp-block_si" href="/2009/11/07/install_centos_debian_ubuntu_from_usb_storage.html"><h1 id="ucentos5debianubuntu">用U盘安装CentOS5/Debian/Ubuntu</h1>
+      <a class="hp-block_si" href="/2009/11/07/install_centos_debian_ubuntu_from_usb_storage.html"><h1>用U盘安装CentOS5/Debian/Ubuntu</h1>
 
-<h2 id="section">准备</h2>
-<p><strong>grub4dos</strong><br />
-http://download.gna.org/grub4dos/</p>
+<h2>准备</h2>
 
-<p><strong>安装光盘镜像</strong><br />
-CentOS的话，最好下全所有镜像，5.4是6cd；Debian只要下第一张就可以了；Ubuntu/Kubuntu则只有一张。</p>
+<p><strong>grub4dos</strong><br>
+<a href="http://download.gna.org/grub4dos/">http://download.gna.org/grub4dos/</a></p>
 
-<hr />
-<p><strong>U盘或者别的USB存储设备一个</strong><br />
-MBR必须是空的——如果你不知道MBR是什么，要么假定它已经是空的，要么自己google。如果不想安装过程中发生各种难以预知的意外，最好整个U盘都是空的。</p>
-
-<p><strong>用来启动安装程序的内核和内存镜像</strong><br />
-CentOS的在iso1的images/diskboot.img里面，分别是vmlinz和initrd.img
-Debian和Ubuntu的则要去服务器找，首先要知道一些debian和ubuntu资源的ftp服务器，参考收集速度快的Debian或者Ubuntu源
-然后镜像通常在类似这样的路径下面</p>
-
-<blockquote>
-  <p>dists/squeeze/main/installer-i386/current/images/hd-media/</p>
-</blockquote>
-
-<p>squeeze这一节是版本代号，例如debian的lenny,squezz,etch,sid(unstable分支永远是sid)，ubuntu的intrepid,karmic,hardy,也有可能出现current,指向当前的稳定版本。
-installer-i386这一级上根据自己的平台选择，要和iso匹配，例如下的是amd64的iso那么这里也应该选amd64。最终看到hd-media这个目录，就到家了。里面有vmlinz和initrd.gz，就是它们俩了。</p>
-
-<h2 id="section-1">开工</h2>
-<p>把grub4dos解压到U盘里，然后把vmlinz和initrd还有光盘镜像都丢进去。debian和ubuntu的镜像必须放在根目录，CentOS的不用但是何必多此一举自找麻烦。<br />
-然后用这个U盘开机，通常是在开机自检的时候按f12或者esc会进入选择启动设备的菜单，在那里选择usb-hdd或者在硬盘列表里找到u盘。还不会的话自己google一下。<br />
-启动成功之后就到了grub菜单，按c进入命令行，执行</p>
-
-<p><code>shell
-kernel /vmlinuz
-initrd /initrd.gz #或者.img
-boot
-</code></p>
-
-<p>就会引导安装程序。之后debian/ubuntu的安装程序会自己搜索iso，而centos则需要指定iso所在的设备和路径。
-之后就进入正常的轨道了。</p>
-</a>
+<p><strong>安装光盘镜像</strong><br>
+CentOS的话，最好下全所有镜像，5.4是6cd；Debian只要下第一张就可以了；Ubuntu/Kubuntu则只有一张。</p></a>
     
     <div class="hp-c"></div>
   </div>
@@ -83,7 +53,7 @@ boot
   
   <section class="hp-tag_cloud">
   <header>Tags</header>
-  <a href="/tags/BBQ.html" class="set-1">BBQ</a> <a href="/tags/beef.html" class="set-1">beef</a> <a href="/tags/bike.html" class="set-1">bike</a> <a href="/tags/career.html" class="set-1">career</a> <a href="/tags/cat.html" class="set-1">cat</a> <a href="/tags/centos.html" class="set-1">centos</a> <a href="/tags/chicken.html" class="set-1">chicken</a> <a href="/tags/coding.html" class="set-1">coding</a> <a href="/tags/cooking.html" class="set-3">cooking</a> <a href="/tags/css.html" class="set-1">css</a> <a href="/tags/curry.html" class="set-1">curry</a> <a href="/tags/debian.html" class="set-1">debian</a> <a href="/tags/honey.html" class="set-1">honey</a> <a href="/tags/lettuce.html" class="set-1">lettuce</a> <a href="/tags/life.html" class="set-5">life</a> <a href="/tags/linux.html" class="set-1">linux</a> <a href="/tags/meat.html" class="set-3">meat</a> <a href="/tags/microwave.html" class="set-1">microwave</a> <a href="/tags/pork.html" class="set-1">pork</a> <a href="/tags/tech.html" class="set-1">tech</a> <a href="/tags/ubuntu.html" class="set-1">ubuntu</a> <a href="/tags/xanthoxylum.html" class="set-1">xanthoxylum</a>
+  <a href="/tags/BBQ.html" class="set-1">BBQ</a> <a href="/tags/beef.html" class="set-1">beef</a> <a href="/tags/benchmark.html" class="set-1">benchmark</a> <a href="/tags/bike.html" class="set-1">bike</a> <a href="/tags/career.html" class="set-1">career</a> <a href="/tags/cat.html" class="set-1">cat</a> <a href="/tags/centos.html" class="set-1">centos</a> <a href="/tags/chicken.html" class="set-1">chicken</a> <a href="/tags/coding.html" class="set-1">coding</a> <a href="/tags/cooking.html" class="set-3">cooking</a> <a href="/tags/css.html" class="set-1">css</a> <a href="/tags/curry.html" class="set-1">curry</a> <a href="/tags/debian.html" class="set-1">debian</a> <a href="/tags/gfw.html" class="set-1">gfw</a> <a href="/tags/honey.html" class="set-1">honey</a> <a href="/tags/lettuce.html" class="set-1">lettuce</a> <a href="/tags/life.html" class="set-5">life</a> <a href="/tags/linux.html" class="set-1">linux</a> <a href="/tags/meat.html" class="set-3">meat</a> <a href="/tags/microwave.html" class="set-1">microwave</a> <a href="/tags/mysql.html" class="set-1">mysql</a> <a href="/tags/pork.html" class="set-1">pork</a> <a href="/tags/rails.html" class="set-1">rails</a> <a href="/tags/sql.html" class="set-1">sql</a> <a href="/tags/tech.html" class="set-3">tech</a> <a href="/tags/ubuntu.html" class="set-1">ubuntu</a> <a href="/tags/xanthoxylum.html" class="set-1">xanthoxylum</a>
 </section>
   
   <section class="hp-archive">

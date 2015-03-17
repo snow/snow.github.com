@@ -28,47 +28,17 @@
   <h1 class="hp-pg_head">Tag: css</h1>
   <div class="hp-block_stream">
     
-      <a class="hp-block_si" href="/2010/01/06/push-page-footer-to-window-bottom-by-pure-css.html"><h1 id="push-page-footer-to-window-bottom-by-pure-css">Push Page Footer to Window Bottom by Pure CSS</h1>
+      <a class="hp-block_si" href="/2010/01/06/push-page-footer-to-window-bottom-by-pure-css.html"><h1>Push Page Footer to Window Bottom by Pure CSS</h1>
 
 <p>First comes my html structure.</p>
-
-<p>```HTML</p>
-<body>
-  <div id="hd"></div>
-  <div id="bd">
-    <div class="layout"></div>
-  </div>
-  <div id="ft"></div>
-</body>
-<p>```</p>
-
-<hr />
-<p>Then css</p>
-
-<p><code>CSS
-html,body {
-  /* required,or div#bd could not expand to full page height */
-  height:100%; 
-}
-#hd {
-  height:50px;
-  /* use negative margin-bottom of #hd instead of negative margin-top of #bd */
-  margin-bottom:-50px; 
-}
-#bd {
-  /* doesn't work under fucking IE6,write JS for it */
-  min-height:100%; 
-}
-#bd .layout {
-  /* 50px on top for header and 50px on bottom for footer */
-  padding:50px 0 50px 0;
-}
-#ft {
-  /* I didn't use -50px curz I like to leave some while in the page bottom edge */
-  margin-top:-30px; 
-}
-</code></p>
-</a>
+<div class="highlight"><pre><span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;hd&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;bd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;layout&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;ft&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</pre></div></a>
     
     <div class="hp-c"></div>
   </div>
@@ -85,7 +55,7 @@ html,body {
   
   <section class="hp-tag_cloud">
   <header>Tags</header>
-  <a href="/tags/BBQ.html" class="set-1">BBQ</a> <a href="/tags/beef.html" class="set-1">beef</a> <a href="/tags/bike.html" class="set-1">bike</a> <a href="/tags/career.html" class="set-1">career</a> <a href="/tags/cat.html" class="set-1">cat</a> <a href="/tags/centos.html" class="set-1">centos</a> <a href="/tags/chicken.html" class="set-1">chicken</a> <a href="/tags/coding.html" class="set-1">coding</a> <a href="/tags/cooking.html" class="set-3">cooking</a> <a href="/tags/css.html" class="set-1">css</a> <a href="/tags/curry.html" class="set-1">curry</a> <a href="/tags/debian.html" class="set-1">debian</a> <a href="/tags/honey.html" class="set-1">honey</a> <a href="/tags/lettuce.html" class="set-1">lettuce</a> <a href="/tags/life.html" class="set-5">life</a> <a href="/tags/linux.html" class="set-1">linux</a> <a href="/tags/meat.html" class="set-3">meat</a> <a href="/tags/microwave.html" class="set-1">microwave</a> <a href="/tags/pork.html" class="set-1">pork</a> <a href="/tags/tech.html" class="set-1">tech</a> <a href="/tags/ubuntu.html" class="set-1">ubuntu</a> <a href="/tags/xanthoxylum.html" class="set-1">xanthoxylum</a>
+  <a href="/tags/BBQ.html" class="set-1">BBQ</a> <a href="/tags/beef.html" class="set-1">beef</a> <a href="/tags/benchmark.html" class="set-1">benchmark</a> <a href="/tags/bike.html" class="set-1">bike</a> <a href="/tags/career.html" class="set-1">career</a> <a href="/tags/cat.html" class="set-1">cat</a> <a href="/tags/centos.html" class="set-1">centos</a> <a href="/tags/chicken.html" class="set-1">chicken</a> <a href="/tags/coding.html" class="set-1">coding</a> <a href="/tags/cooking.html" class="set-3">cooking</a> <a href="/tags/css.html" class="set-1">css</a> <a href="/tags/curry.html" class="set-1">curry</a> <a href="/tags/debian.html" class="set-1">debian</a> <a href="/tags/gfw.html" class="set-1">gfw</a> <a href="/tags/honey.html" class="set-1">honey</a> <a href="/tags/lettuce.html" class="set-1">lettuce</a> <a href="/tags/life.html" class="set-5">life</a> <a href="/tags/linux.html" class="set-1">linux</a> <a href="/tags/meat.html" class="set-3">meat</a> <a href="/tags/microwave.html" class="set-1">microwave</a> <a href="/tags/mysql.html" class="set-1">mysql</a> <a href="/tags/pork.html" class="set-1">pork</a> <a href="/tags/rails.html" class="set-1">rails</a> <a href="/tags/sql.html" class="set-1">sql</a> <a href="/tags/tech.html" class="set-3">tech</a> <a href="/tags/ubuntu.html" class="set-1">ubuntu</a> <a href="/tags/xanthoxylum.html" class="set-1">xanthoxylum</a>
 </section>
   
   <section class="hp-archive">
