@@ -58,18 +58,31 @@ tags:
 不幸的是，每个dns请求都要走一遍隧道的话很慢。
 
 #### DNS缓存
-用unbound来缓存dns查询，并把请求分发到多个dns服务器来碰碰运气看有没有哪个dns速度好能改善一下性能。
+用unbound
+
+- 缓存dns查询结果来改善性能
+- 把请求分发到多个dns服务器来改善性能和成功率。
+- 把某些域名的解析发到国内的DNS, 使得访问少数国内网站的速度收到的伤害尽可能降低。
+
 用brew安装配置好unbound之后，编辑`/usr/local/etc/unbound/unbound.conf`, 在末尾加上
 
 ``` yaml
 forward-zone:
+  name: "douban.fm"
+  forward-addr: 112.124.47.27 # one dns
+  forward-addr: 114.215.126.16
+  forward-addr: 223.5.5.5 # ali dns
+  forward-addr: 223.6.6.6
+  forward-addr: 114.114.114.114 # 114 dns
+  forward-addr: 114.114.115.115
+forward-zone:
   name: "."
-  forward-addr: 127.0.0.1@40
-  forward-addr: 8.8.8.8
+  forward-addr: 127.0.0.1@40 # dnscrypt
+  forward-addr: 8.8.8.8 # google
   forward-addr: 8.8.4.4
-  forward-addr: 208.67.222.222
+  forward-addr: 208.67.222.222 # open dns
   forward-addr: 208.67.220.220
-  forward-addr: 77.88.8.8
+  forward-addr: 77.88.8.8 # yandex
   forward-addr: 77.88.8.1
 ```
 unload/load之后修改网络设置，设置127.0.0.1为唯一的dns服务器。
