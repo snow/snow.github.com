@@ -84,6 +84,8 @@
 
 <h4>DNS缓存</h4>
 
+<p><strong>更新: 这一节的内容已经作废，因为包含错误的信息。过些日子我会更新。</strong></p>
+
 <p>用unbound</p>
 
 <ul>
@@ -110,6 +112,10 @@
   <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">208.67.220.220</span>
   <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">77.88.8.8</span> <span class="c1"># yandex</span>
   <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">77.88.8.1</span>
+</pre></div>
+<p>并确认其它配置</p>
+<div class="highlight"><pre><span class="l-Scalar-Plain">do-not-query-localhost</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">no</span>
+<span class="l-Scalar-Plain">auto-trust-anchor-file</span><span class="p-Indicator">:</span> <span class="s">&quot;/usr/local/etc/unbound/root.key&quot;</span>
 </pre></div>
 <p>unload/load之后修改网络设置，设置127.0.0.1为唯一的dns服务器。</p>
 
