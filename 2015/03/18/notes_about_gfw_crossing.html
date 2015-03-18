@@ -84,16 +84,31 @@
 
 <h4>DNS缓存</h4>
 
-<p>用unbound来缓存dns查询，并把请求分发到多个dns服务器来碰碰运气看有没有哪个dns速度好能改善一下性能。
-用brew安装配置好unbound之后，编辑<code>/usr/local/etc/unbound/unbound.conf</code>, 在末尾加上</p>
+<p>用unbound</p>
+
+<ul>
+<li>缓存dns查询结果来改善性能</li>
+<li>把请求分发到多个dns服务器来改善性能和成功率。</li>
+<li>把某些域名的解析发到国内的DNS, 使得访问少数国内网站的速度收到的伤害尽可能降低。</li>
+</ul>
+
+<p>用brew安装配置好unbound之后，编辑<code>/usr/local/etc/unbound/unbound.conf</code>, 在末尾加上</p>
 <div class="highlight"><pre><span class="l-Scalar-Plain">forward-zone</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="s">&quot;douban.fm&quot;</span>
+  <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">112.124.47.27</span> <span class="c1"># one dns</span>
+  <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">114.215.126.16</span>
+  <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">223.5.5.5</span> <span class="c1"># ali dns</span>
+  <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">223.6.6.6</span>
+  <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">114.114.114.114</span> <span class="c1"># 114 dns</span>
+  <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">114.114.115.115</span>
+<span class="l-Scalar-Plain">forward-zone</span><span class="p-Indicator">:</span>
   <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="s">&quot;.&quot;</span>
-  <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">127.0.0.1@40</span>
-  <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">8.8.8.8</span>
+  <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">127.0.0.1@40</span> <span class="c1"># dnscrypt</span>
+  <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">8.8.8.8</span> <span class="c1"># google</span>
   <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">8.8.4.4</span>
-  <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">208.67.222.222</span>
+  <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">208.67.222.222</span> <span class="c1"># open dns</span>
   <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">208.67.220.220</span>
-  <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">77.88.8.8</span>
+  <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">77.88.8.8</span> <span class="c1"># yandex</span>
   <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">77.88.8.1</span>
 </pre></div>
 <p>unload/load之后修改网络设置，设置127.0.0.1为唯一的dns服务器。</p>
