@@ -58,6 +58,9 @@ tags:
 不幸的是，每个dns请求都要走一遍隧道的话很慢。
 
 #### DNS缓存
+**更新: 这一节的内容已经作废，因为包含错误的信息。过些日子我会更新。**
+
+
 用unbound
 
 - 缓存dns查询结果来改善性能
@@ -84,6 +87,12 @@ forward-zone:
   forward-addr: 208.67.220.220
   forward-addr: 77.88.8.8 # yandex
   forward-addr: 77.88.8.1
+```
+并确认其它配置
+
+``` yaml
+do-not-query-localhost: no
+auto-trust-anchor-file: "/usr/local/etc/unbound/root.key"
 ```
 unload/load之后修改网络设置，设置127.0.0.1为唯一的dns服务器。
 
