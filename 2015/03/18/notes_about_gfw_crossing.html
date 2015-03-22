@@ -80,44 +80,26 @@
 </pre></div>
 <p>如果需要，sudo launchctl unload/load一遍来让设置生效。</p>
 
-<p>不幸的是，每个dns请求都要走一遍隧道的话很慢。</p>
-
-<h4>DNS缓存</h4>
-
-<p><strong>更新: 这一节的内容已经作废，因为包含错误的信息。过些日子我会更新。</strong></p>
-
-<p>用unbound</p>
+<p>不幸的是</p>
 
 <ul>
-<li>缓存dns查询结果来改善性能</li>
-<li>把请求分发到多个dns服务器来改善性能和成功率。</li>
-<li>把某些域名的解析发到国内的DNS, 使得访问少数国内网站的速度收到的伤害尽可能降低。</li>
+<li>所有域名都到国外dns解析的话，在某些国内服务上会被分配到针对国外优化的CDN，访问起来很慢。</li>
+<li>每个dns请求都要走一遍隧道的话很慢</li>
 </ul>
 
-<p>用brew安装配置好unbound之后，编辑<code>/usr/local/etc/unbound/unbound.conf</code>, 在末尾加上</p>
-<div class="highlight"><pre><span class="l-Scalar-Plain">forward-zone</span><span class="p-Indicator">:</span>
-  <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="s">&quot;douban.fm&quot;</span>
-  <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">112.124.47.27</span> <span class="c1"># one dns</span>
-  <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">114.215.126.16</span>
-  <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">223.5.5.5</span> <span class="c1"># ali dns</span>
-  <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">223.6.6.6</span>
-  <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">114.114.114.114</span> <span class="c1"># 114 dns</span>
-  <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">114.114.115.115</span>
-<span class="l-Scalar-Plain">forward-zone</span><span class="p-Indicator">:</span>
-  <span class="l-Scalar-Plain">name</span><span class="p-Indicator">:</span> <span class="s">&quot;.&quot;</span>
-  <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">127.0.0.1@40</span> <span class="c1"># dnscrypt</span>
-  <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">8.8.8.8</span> <span class="c1"># google</span>
-  <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">8.8.4.4</span>
-  <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">208.67.222.222</span> <span class="c1"># open dns</span>
-  <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">208.67.220.220</span>
-  <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">77.88.8.8</span> <span class="c1"># yandex</span>
-  <span class="l-Scalar-Plain">forward-addr</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">77.88.8.1</span>
+<h4>DNS分发和缓存</h4>
+
+<p>在本机架设 <a href="https://github.com/snow/pathfinder">https://github.com/snow/pathfinder</a> 来把白名单上的域名交给国内dns, 剩下的都用 dnscrypt-proxy 送出国。不幸的是，目前pathfinder离完工还很远，暂时不太适合非战斗人员使用。</p>
+
+<p>然后在本机架设 dnsmasq 作为缓存, <code>brew install dnsmasq</code> 并按brew的安装说明完成剩下的步骤，然后编辑 <code>/usr/local/etc/dnsmasq.conf</code>, 确保下面几行:</p>
+<div class="highlight"><pre><span class="err">domain-needed</span>
+<span class="err">bogus-priv</span>
+<span class="err">no-resolv</span>
+<span class="na">server</span><span class="o">=</span><span class="s">127.0.0.1#5300</span>
 </pre></div>
-<p>并确认其它配置</p>
-<div class="highlight"><pre><span class="l-Scalar-Plain">do-not-query-localhost</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">no</span>
-<span class="l-Scalar-Plain">auto-trust-anchor-file</span><span class="p-Indicator">:</span> <span class="s">&quot;/usr/local/etc/unbound/root.key&quot;</span>
-</pre></div>
-<p>unload/load之后修改网络设置，设置127.0.0.1为唯一的dns服务器。</p>
+<p>并重启dnsmasq.</p>
+
+<p>最后，把操作系统的dns配置为有且仅有<code>127.0.0.1</code>, 这样暂时就勉强解决了DNS的问题。</p>
 
 <h3>流量隧道</h3>
 
