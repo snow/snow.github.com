@@ -55,46 +55,27 @@ tags:
 ```
 如果需要，sudo launchctl unload/load一遍来让设置生效。
 
-不幸的是，每个dns请求都要走一遍隧道的话很慢。
+不幸的是
 
-#### DNS缓存
-**更新: 这一节的内容已经作废，因为包含错误的信息。过些日子我会更新。**
+- 所有域名都到国外dns解析的话，在某些国内服务上会被分配到针对国外优化的CDN，访问起来很慢。
+- 每个dns请求都要走一遍隧道的话很慢
 
+#### DNS分发和缓存
 
-用unbound
+在本机架设 https://github.com/snow/pathfinder 来把白名单上的域名交给国内dns, 剩下的都用 dnscrypt-proxy 送出国。不幸的是，目前pathfinder离完工还很远，暂时不太适合非战斗人员使用。
 
-- 缓存dns查询结果来改善性能
-- 把请求分发到多个dns服务器来改善性能和成功率。
-- 把某些域名的解析发到国内的DNS, 使得访问少数国内网站的速度收到的伤害尽可能降低。
+然后在本机架设 dnsmasq 作为缓存, `brew install dnsmasq` 并按brew的安装说明完成剩下的步骤，然后编辑 `/usr/local/etc/dnsmasq.conf`, 确保下面几行:
 
-用brew安装配置好unbound之后，编辑`/usr/local/etc/unbound/unbound.conf`, 在末尾加上
-
-``` yaml
-forward-zone:
-  name: "douban.fm"
-  forward-addr: 112.124.47.27 # one dns
-  forward-addr: 114.215.126.16
-  forward-addr: 223.5.5.5 # ali dns
-  forward-addr: 223.6.6.6
-  forward-addr: 114.114.114.114 # 114 dns
-  forward-addr: 114.114.115.115
-forward-zone:
-  name: "."
-  forward-addr: 127.0.0.1@40 # dnscrypt
-  forward-addr: 8.8.8.8 # google
-  forward-addr: 8.8.4.4
-  forward-addr: 208.67.222.222 # open dns
-  forward-addr: 208.67.220.220
-  forward-addr: 77.88.8.8 # yandex
-  forward-addr: 77.88.8.1
+``` cfg
+domain-needed
+bogus-priv
+no-resolv
+server=127.0.0.1#5300
 ```
-并确认其它配置
+并重启dnsmasq.
 
-``` yaml
-do-not-query-localhost: no
-auto-trust-anchor-file: "/usr/local/etc/unbound/root.key"
-```
-unload/load之后修改网络设置，设置127.0.0.1为唯一的dns服务器。
+最后，把操作系统的dns配置为有且仅有`127.0.0.1`, 这样暂时就勉强解决了DNS的问题。
+
 
 ### 流量隧道
 目前用着还不错的隧道有
