@@ -14,11 +14,11 @@ mnav: posts
       {% endfor %}
     {% endfor %}
   </div>
-  
+
   {% if paginator %}
   <nav class="hp-pgn pagination pagination-centered">
     <ul>
-    {% for page in (1..paginator.total_pages) %}      
+    {% for page in (1..paginator.total_pages) %}
       {% capture lntxt %}
         {% if page == paginator.previous_page %}&laquo;{% endif %}
         {{ page }}
@@ -28,10 +28,9 @@ mnav: posts
       {% capture cls %}
         hp-li
         {% if page == paginator.previous_page %}hp-p{% endif %}
-        {% if page == paginator.page %}hp-c{% endif %}
         {% if page == paginator.next_page %}hp-n{% endif %}
       {% endcapture %}
-      <li {% if page == paginator.page %}class="active"{% endif %}><a class="{{ cls }}" href="{{ href }}">{{ lntxt }}</a></li>      
+      <li {% if page == paginator.page %}class="active"{% endif %}><a class="{{ cls }}" href="{{ href }}">{{ lntxt }}</a></li>
     {% endfor %}
     </ul>
   </nav>
