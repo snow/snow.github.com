@@ -1,1 +1,1 @@
-<a class="hp-block_si" href="{{ site.baseurl }}{{ post.url }}">{{ post.content | summarize }}</a>
+<a class="hp-block_si" href="{{ site.baseurl }}{{ post.url }}">{{ post.excerpt | replace_regex: '<a[^>]+>', '' | remove: '</a>' }}</a>

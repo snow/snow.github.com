@@ -67,6 +67,7 @@ GEM
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
     redcarpet (3.4.0)
+    replace_regex (0.1.0)
     rouge (1.11.1)
     ruby-nuggets (1.0.0)
       nuggets (= 1.0.0)
@@ -85,6 +86,7 @@ DEPENDENCIES
   jekyll-tagging!
   octopress (~> 3.0.0)
   pygments.rb (~> 0.6.3)
+  replace_regex (~> 0.1.0)
 
 BUNDLED WITH
    1.13.6
