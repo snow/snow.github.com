@@ -2,6 +2,7 @@ markdown: CustomMarkdownProcessor
 paginate: 5
 tag_page_layout: tag_index
 tag_page_dir: tags
+timezone: Asia/Hong_Kong
 sass:
   sass_dir: _vendor/sass-twitter-bootstrap/lib
 defaults:
