@@ -6,32 +6,27 @@ module Jekyll
       @dir = ''
       @name = 'archive.html'
 
-      self.process(@name)
-      self.read_yaml(@base, 'archive.html')
-      self.data['title'] = 'Archive'
-      self.data['years_months_posts'] = years_months_posts
+      process(@name)
+      read_yaml(@base, 'archive.html')
+      data['title'] = 'Archive'
+      data['years_months_posts'] = years_months_posts
     end
   end
-  
+
   class ArchivePageGenerator < Generator
     def generate(site)
       years_months_posts = {}
-      
-      for post in site.posts.reverse
+
+      site.posts.docs.reverse.each do |post|
         year = post.date.year
         month = Date::ABBR_MONTHNAMES[post.date.month]
-      
-        unless years_months_posts.has_key? year
-          years_months_posts[year] = {}
-        end
-        
-        unless years_months_posts[year].has_key? month
-          years_months_posts[year][month] = []
-        end
-        
+
+        years_months_posts[year] ||= {}
+        years_months_posts[year][month] ||= []
+
         years_months_posts[year][month] << post
       end
-      
+
       site.pages << ArchivePage.new(site, years_months_posts)
     end
   end
