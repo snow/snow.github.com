@@ -13,7 +13,7 @@ The Way Lair
 搬到市中心之前，有两天的回家路上拍下了这些照片。
 
 ![image on imgur: http://imgur.com/GhsO1](http://i.imgur.com/GhsO1.jpg "从这里开始是两座连着的桥")
-- - -
+<!-- more -->
 ![image on imgur: http://imgur.com/3uEss](http://i.imgur.com/3uEss.jpg )
 ![image on imgur: http://imgur.com/qjmVf](http://i.imgur.com/qjmVf.jpg "这座桥也在修")
 ![image on imgur: http://imgur.com/vvzUy](http://i.imgur.com/vvzUy.jpg "和进出城的卡车挤在狭窄的一半车道上")

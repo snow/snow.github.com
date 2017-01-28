@@ -21,7 +21,7 @@ tags:
 
 **http://ftp.tw.debian.org/debian/**  
 教育网内200-500 KB/s，比韩国的稳定
-- - -
+<!-- more -->
 * http://ftp.hk.debian.org/debian/
 * http://ftp.jp.debian.org/debian/
 * http://ftp2.jp.debian.org/debian/

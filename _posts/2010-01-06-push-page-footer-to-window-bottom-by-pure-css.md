@@ -23,7 +23,7 @@ First comes my html structure.
 </body>
 ```
 
-- - -
+<!-- more -->
 Then css
 
 ```CSS

@@ -6,7 +6,8 @@ sass:
   sass_dir: _vendor/sass-twitter-bootstrap/lib
 defaults:
   -
-    scope: 
+    scope:
       path: ""
     values:
-      layout: "post"
+      layout: post
+      excerpt_separator: "<!-- more -->"
