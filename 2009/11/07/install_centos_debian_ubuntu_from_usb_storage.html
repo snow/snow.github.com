@@ -58,8 +58,8 @@ installer-i386这一级上根据自己的平台选择，要和iso匹配，例如
 <p>把grub4dos解压到U盘里，然后把vmlinz和initrd还有光盘镜像都丢进去。debian和ubuntu的镜像必须放在根目录，CentOS的不用但是何必多此一举自找麻烦。<br>
 然后用这个U盘开机，通常是在开机自检的时候按f12或者esc会进入选择启动设备的菜单，在那里选择usb-hdd或者在硬盘列表里找到u盘。还不会的话自己google一下。<br>
 启动成功之后就到了grub菜单，按c进入命令行，执行</p>
-<div class="highlight"><pre>kernel /vmlinuz
-initrd /initrd.gz <span class="c">#或者.img</span>
+<div class="highlight"><pre><span></span>kernel /vmlinuz
+initrd /initrd.gz <span class="c1">#或者.img</span>
 boot
 </pre></div>
 <p>就会引导安装程序。之后debian/ubuntu的安装程序会自己搜索iso，而centos则需要指定iso所在的设备和路径。
@@ -74,9 +74,10 @@ boot
 <div class="hp-sb">
   <section class="hp-author">
   <header>The author</header>
-  <h2>Snow Hellsing</h2>
+  <h2>Snow Helsing</h2>
   Just a stray cat
 </section>
+
   
   <section class="hp-tags">
     <header>Tagged in</header>

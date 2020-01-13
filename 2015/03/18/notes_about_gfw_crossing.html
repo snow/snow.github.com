@@ -69,7 +69,7 @@
 所以我们只好首先在墙外租一台服务器，然后在上面安装 dnscrypt-wrapper <a href="http://cofyc.github.io/dnscrypt-wrapper/">http://cofyc.github.io/dnscrypt-wrapper/</a> 来把dns请求转交给墙外的公共dns服务。</p>
 
 <p>然后在本机<code>brew install dnscrypt-proxy</code>, 按brew的安装说明完成剩下的步骤，然后编辑 <code>/Library/LaunchDaemons/homebrew.mxcl.dnscrypt-proxy.plist</code>:</p>
-<div class="highlight"><pre><span class="nt">&lt;array&gt;</span>
+<div class="highlight"><pre><span></span><span class="nt">&lt;array&gt;</span>
   <span class="nt">&lt;string&gt;</span>/usr/local/opt/dnscrypt-proxy/sbin/dnscrypt-proxy<span class="nt">&lt;/string&gt;</span>
   <span class="nt">&lt;string&gt;</span>--user=nobody<span class="nt">&lt;/string&gt;</span>
   <span class="nt">&lt;string&gt;</span>--resolver-address=x.x.x.x:x<span class="nt">&lt;/string&gt;</span>
@@ -92,9 +92,9 @@
 <p>在本机架设 <a href="https://github.com/snow/pathfinder">https://github.com/snow/pathfinder</a> 来把白名单上的域名交给国内dns, 剩下的都用 dnscrypt-proxy 送出国。不幸的是，目前pathfinder离完工还很远，暂时不太适合非战斗人员使用。</p>
 
 <p>然后在本机架设 dnsmasq 作为缓存, <code>brew install dnsmasq</code> 并按brew的安装说明完成剩下的步骤，然后编辑 <code>/usr/local/etc/dnsmasq.conf</code>, 确保下面几行:</p>
-<div class="highlight"><pre><span class="err">domain-needed</span>
-<span class="err">bogus-priv</span>
-<span class="err">no-resolv</span>
+<div class="highlight"><pre><span></span><span class="na">domain-needed</span>
+<span class="na">bogus-priv</span>
+<span class="na">no-resolv</span>
 <span class="na">server</span><span class="o">=</span><span class="s">127.0.0.1#5300</span>
 </pre></div>
 <p>并重启dnsmasq.</p>
@@ -129,9 +129,10 @@
 <div class="hp-sb">
   <section class="hp-author">
   <header>The author</header>
-  <h2>Snow Hellsing</h2>
+  <h2>Snow Helsing</h2>
   Just a stray cat
 </section>
+
   
   <section class="hp-tags">
     <header>Tagged in</header>
